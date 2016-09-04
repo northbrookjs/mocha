@@ -1,0 +1,6 @@
+{
+  "plugins": ["."],
+  "mocha": {
+    "require": ["buba/register"]
+  }
+}
