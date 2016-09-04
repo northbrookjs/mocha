@@ -10,24 +10,28 @@ npm install --save-dev @northbrook/mocha
 
 ## API
 
-This configuration comes with to northbrook scripts
+This configuration comes with two northbrook scripts
 
-**northbrook run mocha**
+#### **northbrook run mocha**
 
 This will run your mocha tests in your current directory
 
-**northbrook run coverage**
+#### **northbrook run coverage**
 
-Just like `mocha`, but it will also run code coverage through NYC.
+Just like `nb run mocha`, but it will also run code coverage through NYC.
+
+___
 
 If you need to run these within a monorepo, over multiple packages,
 you can prefix these commands with `northbrook exec`
 e.g.
 
 ```sh
-northbrook exec -- northbrook run mocha
+nb exec -- nb run mocha
+nb exec -- nb run coverage
 ```
 
+___
 ## Configuration
 
 ```js
