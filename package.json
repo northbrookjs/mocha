@@ -1,7 +1,7 @@
 {
   "name": "@northbrook/mocha",
   "description": "Mocha Configuration for Northbrook",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "Tylor Steinberger <tlsteinberger167@gmail.com>",
   "bugs": {
     "url": "https://github.com/northbrookjs/northbrookjs/issues"
