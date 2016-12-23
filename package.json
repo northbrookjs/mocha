@@ -3,48 +3,45 @@
   "description": "Mocha Configuration for Northbrook",
   "version": "1.0.0",
   "author": "Tylor Steinberger <tlsteinberger167@gmail.com>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "homepage": "https://github.com/northbrookjs/northbrookjs#readme",
   "bugs": {
     "url": "https://github.com/northbrookjs/northbrookjs/issues"
   },
-  "config": {
-    "ghooks": {
-      "commit-msg": "node ./node_modules/.bin/validate-commit-msg"
-    },
-    "validate-commit-msg": {
-      "types": "@northbrook/commit-types"
-    }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/northbrookjs/northbrookjs.git"
   },
-  "dependencies": {
-    "app-module-path": "^1.1.0",
-    "mocha": "^3.0.2",
-    "nyc": "^8.1.0"
-  },
-  "devDependencies": {
-    "buba": "^2.0.4",
-    "ghooks": "^1.3.2",
-    "northbrook": "^3.1.0",
-    "validate-commit-msg": "^2.8.0"
-  },
-  "peerDependencies": {
-    "northbrook": "^3.1.0"
-  },
-  "homepage": "https://github.com/northbrookjs/northbrookjs#readme",
   "keywords": [
     "mocha",
     "northbrook",
     "plugin",
     "testing"
   ],
-  "license": "MIT",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/northbrookjs/northbrookjs.git"
+  "dependencies": {
+    "@typed/sequence": "^1.1.0",
+    "@types/glob-expand": "0.0.30",
+    "@types/mocha": "^2.2.34",
+    "@types/node": "^6.0.52",
+    "glob-expand": "^0.2.1",
+    "mocha": "^3.2.0",
+    "northbrook": "^4.1.0",
+    "simple-spinner": "0.0.5",
+    "ts-node": "^1.7.2"
+  },
+  "devDependencies": {
+    "@motorcycle/tslint": "^1.2.0",
+    "tslint": "^4.1.1",
+    "typescript": "^2.1.4"
   },
   "scripts": {
+    "build": "tsc -P tsconfig.build.json",
     "commit": "northbrook commit",
-    "postinstall": "node ./post-install.js",
+    "preversion": "npm run build --silent",
     "release": "northbrook release",
-    "test": "node script.js --coverage"
+    "test": "npm run test:lint && ts-node test/northbrook.test.ts",
+    "test:lint": "tslint src/**/*.ts src/*.ts"
   }
 }
