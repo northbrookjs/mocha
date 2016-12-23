@@ -1,3 +1,10 @@
+# 2.1.0 (2016-12-23)
+---
+
+## Features
+
+- feat(mocha): support es2015 tests out of box with buba [7f168231](undefined/commits/7f1682318fd4f68cdd14a1a5f7bd307ebb95fe01)
+
 # 2.0.0 (2016-12-23)
 ---
 
