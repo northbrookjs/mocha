@@ -2,7 +2,9 @@
 
 > Test your packages with Mocha
 
-Seamless testing with Mocha for Northbrook. Handles TypeScript out-of-box.
+Seamless testing with Mocha for Northbrook.
+Handles TypeScript and ES2015 tests out-of-box.
+
 Requires test files to be named using one of the following patterns:
 
 - `.test.(js|ts)`
@@ -34,7 +36,10 @@ module.exports = {
   mocha: {
     // Only run tests for the packages that have changed since last release.
     // Is option is very useful for speeding up CI testing.
-    changed: true
+    changed: true,
+    // An array of packages to require before running your tests
+    // That would normally be used as `mocha -r _____`
+    require: [ 'jsdom-global/register' ],
   }
 }
 ```
@@ -50,4 +55,17 @@ northbrook mocha
 ##### **--changed**
 
 Only run tests for the packages that have changed since last release.
-This option is very useful for speeding up CI testing.
+This option is very useful for speeding up CI testing for monorepos.
+
+```sh
+northbrook mocha --changed
+```
+
+##### **--require**
+
+A list of packages, separated by comma, to require before running your tests
+That would normally be used as `mocha -r _____`
+
+```sh
+northbrook mocha --require jsdom-global/register,buba/register
+```
