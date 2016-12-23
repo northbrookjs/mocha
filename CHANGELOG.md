@@ -1,3 +1,10 @@
+# 2.0.0 (2016-12-23)
+---
+
+## Features
+
+- feat(mocha): Reimplement for v4 of Northbrook [0c861d9b](undefined/commits/0c861d9b360a1f02d45db02adf78d046cd302add)
+
 # v1.0.0 (2016-09-04)
 ---
 
