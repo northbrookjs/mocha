@@ -1,7 +1,6 @@
-import { join } from 'path';
 import {
+  alias,
   command, Command,
-  alias, Alias,
   flag, Flag,
   description, Description,
 } from 'northbrook';

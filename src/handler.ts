@@ -1,11 +1,9 @@
 import { join } from 'path';
-import { Command, HandlerOptions, Pkg, withCallback, Stdio, NorthbrookConfig } from 'northbrook';
-import { sequence } from '@typed/sequence';
+import { Command, HandlerOptions, withCallback, Stdio, NorthbrookConfig } from 'northbrook';
 
 import { defaultTsConfig } from './defaultTsConfig';
 import { runChangedPackages } from './runChangedPackages';
 import { executeAllPackages } from './executeAllPackages';
-import { runTests } from './runTests';
 
 export function addHandler (plugin: Command) {
   withCallback(plugin, (input: HandlerOptions, io: Stdio) => {

@@ -1,4 +1,3 @@
-import { EOL } from 'os';
 import { join } from 'path';
 import { Pkg } from 'northbrook';
 import * as expand from 'glob-expand';
@@ -17,16 +16,6 @@ export function runTests(pkg: Pkg) {
     console.log('Running tests for ' + pkg.name + '...');
 
     const mocha = new Mocha();
-
-    const data: Array<string> = [];
-
-    function write(output: Buffer | string, cb?: Function): boolean {
-      data.push(output.toString());
-
-      if (typeof cb === 'function') cb();
-
-      return true;
-    }
 
     const testFiles: Array<string> =
       expand({ filter: 'isFile', cwd: pkg.path }, defaultPatterns);
