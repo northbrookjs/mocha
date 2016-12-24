@@ -1,16 +1,14 @@
-import { join } from 'path';
 import { Command, HandlerOptions, withCallback, Stdio, NorthbrookConfig } from 'northbrook';
 
-import { defaultTsConfig } from './defaultTsConfig';
 import { runChangedPackages } from './runChangedPackages';
 import { executeAllPackages } from './executeAllPackages';
 
 export function addHandler (plugin: Command) {
   withCallback(plugin, (input: HandlerOptions, io: Stdio) => {
-    const { options, config, directory } = input;
+    const { options, config } = input;
 
     require('buba/register');
-    require('ts-node').register(getTsConfig(directory));
+    require('ts-node');
 
     requireHooks(options, config);
 
@@ -32,16 +30,4 @@ function requireHooks(options: any, config: NorthbrookConfig) {
 
   if (Array.isArray(mocha.require))
     mocha.require.forEach(require);
-}
-
-function getTsConfig (directory: string): any {
-  try {
-    const tsconfig = require(join(directory, 'tsconfig.json'));
-
-    tsconfig.compilerOptions.module = 'commonjs';
-
-    return tsconfig;
-  } catch (e) {
-    return defaultTsConfig;
-  }
 }
