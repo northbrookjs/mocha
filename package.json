@@ -6,13 +6,13 @@
   "license": "MIT",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
-  "homepage": "https://github.com/northbrookjs/northbrookjs#readme",
+  "homepage": "https://github.com/northbrookjs/mocha#readme",
   "bugs": {
-    "url": "https://github.com/northbrookjs/northbrookjs/issues"
+    "url": "https://github.com/northbrookjs/mocha/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/northbrookjs/northbrookjs.git"
+    "url": "git+https://github.com/northbrookjs/mocha.git"
   },
   "keywords": [
     "mocha",
