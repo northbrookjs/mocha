@@ -1,3 +1,10 @@
+# 2.1.1 (2016-12-23)
+---
+
+## Bug Fixes
+
+- fix(mocha): default configuration causes many errors to throw [005c7a28](https://github.com/northbrookjs/northbrookjs/commits/005c7a28bb9db4f01800ec52da8913a836e9897e)
+
 # 2.1.0 (2016-12-23)
 ---
 
