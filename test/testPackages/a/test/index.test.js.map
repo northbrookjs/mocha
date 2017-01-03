@@ -1,0 +1,7 @@
+"use strict";
+var assert = require("assert");
+describe('Regex pattern matching test - SHOULD NOT RUN', function () {
+    it('is true', function () {
+        assert.ok(false);
+    });
+});
