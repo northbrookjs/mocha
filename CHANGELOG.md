@@ -1,3 +1,10 @@
+# 2.1.2 (2017-01-02)
+---
+
+## Bug Fixes
+
+- fix(runTests): fix default test regex patterns [886abaa3](https://github.com/northbrookjs/mocha/commits/886abaa36b61ca526bcde2d36f5647a7ee995680)
+
 # 2.1.1 (2016-12-23)
 ---
 
