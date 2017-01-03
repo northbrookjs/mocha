@@ -1,3 +1,10 @@
+# 2.1.5 (2017-01-02)
+---
+
+## Bug Fixes
+
+- fix(runTests): do not run .js files in generated folders [e81c2606](https://github.com/northbrookjs/mocha/commits/e81c2606982b3237d603f22f23278e5a126f1c3e)
+
 # 2.1.4 (2017-01-02)
 ---
 
