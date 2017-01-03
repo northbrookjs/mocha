@@ -1,3 +1,10 @@
+# 3.0.1 (2017-01-03)
+---
+
+## Bug Fixes
+
+- fix(handler): add back exclude filtering [815a3836](https://github.com/northbrookjs/mocha/commits/815a383602ec8795d501735958c563bbd7047210)
+
 # 3.0.0 (2017-01-03)
 ---
 
