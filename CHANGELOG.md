@@ -1,3 +1,10 @@
+# 2.1.4 (2017-01-02)
+---
+
+## Bug Fixes
+
+- fix(runTests): add generated file folders to blacklist [54b13b30](https://github.com/northbrookjs/mocha/commits/54b13b30f32e8099f77d31adbc90b36c04e7c8f1)
+
 # 2.1.3 (2017-01-02)
 ---
 
