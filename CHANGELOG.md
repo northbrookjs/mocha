@@ -1,3 +1,10 @@
+# 2.1.3 (2017-01-02)
+---
+
+## Bug Fixes
+
+- fix(mocha): exit with 1 on errors [4bd4d2e8](https://github.com/northbrookjs/mocha/commits/4bd4d2e8e76c741780a20cadc346e9887aa600bc)
+
 # 2.1.2 (2017-01-02)
 ---
 
