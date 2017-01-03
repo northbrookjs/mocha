@@ -7,6 +7,11 @@ export function addHandler (plugin: Command) {
   each(plugin, (input: EachHandlerOptions, io: Stdio) => {
     const { options, config, pkg } = input;
 
+    const { mocha = {} } = config;
+
+    if (mocha.exclude && mocha.exclude.indexOf(pkg.name) > -1)
+      return Promise.resolve();
+
     require('buba/register');
     require('ts-node');
 
