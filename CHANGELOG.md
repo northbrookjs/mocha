@@ -1,3 +1,10 @@
+# 2.2.0 (2017-01-03)
+---
+
+## Features
+
+- feat(mocha): add option to exclude packages [27ecf9a0](https://github.com/northbrookjs/mocha/commits/27ecf9a024b7bac5d0cbb140e581e35811175e10)
+
 # 2.1.5 (2017-01-02)
 ---
 
