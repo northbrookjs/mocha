@@ -8,8 +8,8 @@ const defaultPatterns: Array<RegExp | string> =
     /.*\.(spec|test)\.(js|ts)$/,
     /-(spec|test)\.(js|ts)$/,
     /(Spec|Test)\.(js|ts)$/,
-    '!lib/**/*.ts',
-    '!lib.es2015/**/*.ts',
+    '!lib/**/*.*',
+    '!lib.es2015/**/*.*',
     '!node_modules/**/*.*',
   ];
 
