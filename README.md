@@ -34,9 +34,6 @@ module.exports = {
 
   // 100% optional
   mocha: {
-    // Only run tests for the packages that have changed since last release.
-    // Is option is very useful for speeding up CI testing.
-    changed: true,
     // An array of packages to require before running your tests
     // That would normally be used as `mocha -r _____`
     require: [ 'jsdom-global/register' ],

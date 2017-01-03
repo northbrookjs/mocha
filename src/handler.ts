@@ -1,25 +1,26 @@
-import { Command, HandlerOptions, withCallback, Stdio, NorthbrookConfig } from 'northbrook';
+import { EOL } from 'os';
+import { Command, EachHandlerOptions, each, Stdio, NorthbrookConfig } from 'northbrook';
 
-import { runChangedPackages } from './runChangedPackages';
-import { executeAllPackages } from './executeAllPackages';
+import { runTests } from './runTests';
 
 export function addHandler (plugin: Command) {
-  withCallback(plugin, (input: HandlerOptions, io: Stdio) => {
-    const { options, config } = input;
+  each(plugin, (input: EachHandlerOptions, io: Stdio) => {
+    const { options, config, pkg } = input;
 
     require('buba/register');
     require('ts-node');
 
     requireHooks(options, config);
 
-    const { changed } = options;
-    const { mocha } = config;
+    io.stdout.write(EOL + `Running mocha tests in ${pkg.name}...` + EOL);
 
-    if (changed || mocha && mocha.changed)
-      return runChangedPackages(config.packages as Array<string>, mocha, io)
-        .catch(() => process.exit(1));
-
-    return executeAllPackages(input, mocha, io).catch(() => process.exit(1));
+    return runTests(pkg)
+      .then(() => {
+        io.stdout.write(EOL + `Completed mocha tests in ${pkg.name}` + EOL);
+      })
+      .catch(() => {
+        process.exit(1);
+      });
   });
 }
 

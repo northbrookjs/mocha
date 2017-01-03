@@ -15,8 +15,6 @@ const defaultPatterns: Array<RegExp | string> =
 
 export function runTests(pkg: Pkg) {
   return new Promise((resolve, reject) => {
-    console.log('Running tests for ' + pkg.name + '...');
-
     const mocha = new Mocha();
 
     const testFiles: Array<string> =
