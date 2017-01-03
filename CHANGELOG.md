@@ -1,3 +1,11 @@
+# 3.0.0 (2017-01-03)
+---
+
+## Breaking Changes
+
+1. removes `changed` config option
+  - feat(mocha): update to latest northbrook and remove changed config [5f88e886](https://github.com/northbrookjs/mocha/commits/5f88e886ae101b70c8644085187011be9d24c2dd)
+
 # 2.2.0 (2017-01-03)
 ---
 
