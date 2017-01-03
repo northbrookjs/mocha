@@ -7,6 +7,7 @@ declare module 'northbrook/types/northbrook' {
     mocha?: {
       changed?: Boolean,
       require?: Array<string>,
+      exclude?: Array<string>,
     };
   }
 }

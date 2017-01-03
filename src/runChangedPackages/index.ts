@@ -6,10 +6,12 @@ import { sequence } from '@typed/sequence';
 import { getPackagesToTest } from './getPackagesToTest';
 import { runTests } from '../runTests';
 
-export function runChangedPackages(packages: Array<string>, io: Stdio) {
+export function runChangedPackages(packages: Array<string>, mocha: any, io: Stdio) {
   return changedPackages().then(affectedPackages => {
-    const packagesToTest: Array<Pkg> =
-      getPackagesToTest(packages, Object.keys(affectedPackages));
+    const exclude = mocha && mocha.exclude || [];
+
+    const packagesToTest: Array<Pkg> = getPackagesToTest(packages, Object.keys(affectedPackages))
+      .filter(pkg => exclude.indexOf(pkg.name) === -1);
 
     return sequence(packagesToTest, runTests);
   })

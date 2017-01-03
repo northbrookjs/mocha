@@ -40,6 +40,8 @@ module.exports = {
     // An array of packages to require before running your tests
     // That would normally be used as `mocha -r _____`
     require: [ 'jsdom-global/register' ],
+    // An array of packages you would like to be excluded from test running
+    exclude: [ 'name-of-package' ]
   }
 }
 ```

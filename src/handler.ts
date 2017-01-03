@@ -16,10 +16,10 @@ export function addHandler (plugin: Command) {
     const { mocha } = config;
 
     if (changed || mocha && mocha.changed)
-      return runChangedPackages(config.packages as Array<string>, io)
+      return runChangedPackages(config.packages as Array<string>, mocha, io)
         .catch(() => process.exit(1));
 
-    return executeAllPackages(input, io).catch(() => process.exit(1));
+    return executeAllPackages(input, mocha, io).catch(() => process.exit(1));
   });
 }
 
