@@ -5,9 +5,9 @@ import * as Mocha from 'mocha';
 
 const defaultPatterns: Array<RegExp | string> =
   [
-    /.*\.(spec|test)\.(js|ts)/,
-    /-(spec|test)\.(js|ts)/,
-    /(Spec|Test)\.(js|ts)/,
+    /.*\.(spec|test)\.(js|ts)$/,
+    /-(spec|test)\.(js|ts)$/,
+    /(Spec|Test)\.(js|ts)$/,
     '!node_modules/**/*.*',
   ];
 
