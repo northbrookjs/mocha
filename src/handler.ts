@@ -16,9 +16,10 @@ export function addHandler (plugin: Command) {
     const { mocha } = config;
 
     if (changed || mocha && mocha.changed)
-      return runChangedPackages(config.packages as Array<string>, io);
+      return runChangedPackages(config.packages as Array<string>, io)
+        .catch(() => process.exit(1));
 
-    return executeAllPackages(input, io);
+    return executeAllPackages(input, io).catch(() => process.exit(1));
   });
 }
 
@@ -26,7 +27,7 @@ function requireHooks(options: any, config: NorthbrookConfig) {
   if (options.require)
     options.require.split(',').map((str: string) => str.trim()).forEach(require);
 
-  const mocha = config.mocha || {};
+  const mocha = (config as any).mocha || {};
 
   if (Array.isArray(mocha.require))
     mocha.require.forEach(require);
