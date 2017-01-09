@@ -1,3 +1,10 @@
+# 3.1.0 (2017-01-09)
+---
+
+## Features
+
+- feat(mocha): add configurability of pattern matching [a08f4f42](https://github.com/northbrookjs/mocha/commits/a08f4f426080cbee8b66d93b28ff2058a1f485c7)
+
 # 3.0.1 (2017-01-03)
 ---
 
