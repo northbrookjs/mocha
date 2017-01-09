@@ -3,6 +3,20 @@ import { Command, EachHandlerOptions, each, Stdio, NorthbrookConfig } from 'nort
 
 import { runTests } from './runTests';
 
+const defaultPatterns: Array<RegExp | string> =
+  [
+    /.*\.(spec|test)\.(js|ts)$/,
+    /-(spec|test)\.(js|ts)$/,
+    /(Spec|Test)\.(js|ts)$/,
+    'test/**/*.js',
+    'test/**/*.ts',
+    'tests/**/*.js',
+    'tests/**/*.ts',
+    '!lib/**/*.*',
+    '!lib.es2015/**/*.*',
+    '!node_modules/**/*.*',
+  ];
+
 export function addHandler (plugin: Command) {
   each(plugin, (input: EachHandlerOptions, io: Stdio) => {
     const { options, config, pkg } = input;
@@ -19,7 +33,7 @@ export function addHandler (plugin: Command) {
 
     io.stdout.write(EOL + `Running mocha tests in ${pkg.name}...` + EOL);
 
-    return runTests(pkg)
+    return runTests(pkg, mocha.patterns || defaultPatterns)
       .then(() => {
         io.stdout.write(EOL + `Completed mocha tests in ${pkg.name}` + EOL);
       })

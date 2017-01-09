@@ -3,22 +3,12 @@ import { Pkg } from 'northbrook';
 import * as expand from 'glob-expand';
 import * as Mocha from 'mocha';
 
-const defaultPatterns: Array<RegExp | string> =
-  [
-    /.*\.(spec|test)\.(js|ts)$/,
-    /-(spec|test)\.(js|ts)$/,
-    /(Spec|Test)\.(js|ts)$/,
-    '!lib/**/*.*',
-    '!lib.es2015/**/*.*',
-    '!node_modules/**/*.*',
-  ];
-
-export function runTests(pkg: Pkg) {
+export function runTests(pkg: Pkg, patterns: Array<RegExp | string>) {
   return new Promise((resolve, reject) => {
     const mocha = new Mocha();
 
     const testFiles: Array<string> =
-      expand({ filter: 'isFile', cwd: pkg.path }, defaultPatterns);
+      expand({ filter: 'isFile', cwd: pkg.path }, patterns);
 
     testFiles.forEach(file => {
       mocha.addFile(join(pkg.path, file));

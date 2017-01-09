@@ -7,6 +7,7 @@ declare module 'northbrook/types/northbrook' {
     mocha?: {
       require?: Array<string>,
       exclude?: Array<string>,
+      patterns?: Array<RegExp | string>,
     };
   }
 }
