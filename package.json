@@ -23,19 +23,17 @@
   "dependencies": {
     "@typed/sequence": "^1.1.0",
     "@types/glob-expand": "0.0.30",
-    "@types/mocha": "^2.2.34",
-    "@types/node": "^6.0.52",
-    "buba": "^4.0.1",
+    "@types/mocha": "^2.2.38",
+    "@types/node": "^7.0.4",
+    "buba": "^4.0.2",
     "glob-expand": "^0.2.1",
     "mocha": "^3.2.0",
-    "northbrook": "^4.3.5",
-    "simple-spinner": "0.0.5",
-    "ts-node": "^1.7.2"
+    "northbrook": "^4.6.0"
   },
   "devDependencies": {
     "@motorcycle/tslint": "^1.2.0",
-    "tslint": "^4.1.1",
-    "typescript": "^2.1.4"
+    "tslint": "^4.4.2",
+    "typescript": "^2.1.5"
   },
   "scripts": {
     "build": "tsc -P tsconfig.build.json",
