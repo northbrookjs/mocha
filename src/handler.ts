@@ -41,7 +41,7 @@ export function addHandler (plugin: Command) {
 
         e.diagnostics.forEach((diagnostic: any) => {
           io.stderr.write(EOL + diagnostic.message + EOL);
-        })
+        });
 
         process.exit(1);
       });
