@@ -27,7 +27,6 @@ export function addHandler (plugin: Command) {
       return Promise.resolve();
 
     require('buba/register');
-    require('ts-node');
 
     requireHooks(options, config);
 
@@ -37,7 +36,13 @@ export function addHandler (plugin: Command) {
       .then(() => {
         io.stdout.write(EOL + `Completed mocha tests in ${pkg.name}` + EOL);
       })
-      .catch(() => {
+      .catch((e: any) => {
+        io.stderr.write(EOL + e.message + EOL);
+
+        e.diagnostics.forEach((diagnostic: any) => {
+          io.stderr.write(EOL + diagnostic.message + EOL);
+        })
+
         process.exit(1);
       });
   });
