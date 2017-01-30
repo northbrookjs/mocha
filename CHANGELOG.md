@@ -1,3 +1,10 @@
+# 3.1.1 (2017-01-30)
+---
+
+## Bug Fixes
+
+- fix(handler): fix for error messages [2b4d8be4](https://github.com/northbrookjs/mocha/commits/2b4d8be454c129f7dd0e95bb93ef4c242ccf0eee)
+
 # 3.1.0 (2017-01-09)
 ---
 
